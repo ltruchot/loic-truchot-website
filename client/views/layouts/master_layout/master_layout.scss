@@ -1,0 +1,181 @@
+/*****************************************************************************/
+/* MasterLayout: Style */
+/*****************************************************************************/
+.quote-row {
+    width:100%;
+    background: url('/images/braun_wave-3.png') repeat-x;
+    height:10px;
+    z-index:10;
+    position:relative;
+}
+.container {
+    position:relative;
+    z-index:1;
+}
+.get-quote {
+    background: url('/images/get_quote-4.png') no-repeat;
+    width:54px;
+    height:108px;
+    position: absolute;
+    top:-10px;
+    right:-10px;
+    z-index:1;
+    cursor:pointer;
+    text-align: center;
+    color:#FFF;
+    font-family: "Noesis", sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight:bold;
+    padding-top:22px;
+}
+.online-quote {
+    width:100%;
+    background-color: #241313;
+    z-index:10;
+    position:relative;
+    margin:0;
+    padding:0;
+    -webkit-transform: translateZ(0);
+    margin-bottom:-1px;
+    display:none;
+}
+
+.online-quote .white-title {
+    font-family: "Noesis", sans-serif;
+    font-size: 30px;
+    font-weight:bold;
+    color:#FFF;
+    text-align: center;
+    padding:30px 0 0 0;
+    text-transform:uppercase;
+    margin:0;
+}
+.online-quote .white-subtitle {
+    font-family: Times, serif;
+    font-size: 13px;
+    font-weight:bold;
+    color:#FFF;
+    text-align: center;
+    padding:5px 0 0 0;
+    font-style:italic;
+    margin:0;
+}
+.online-quote  label {
+    display:block;
+    font-family: "Noesis", sans-serif;
+    font-size:17px;
+    color:#FFF;
+}
+.online-quote input[type=text], .online-quote input[type=email]{
+    display:block;
+    font-family: "Times", serif;
+    font-size:16px;
+    color:#FFF;
+    background-color: transparent;
+    border:none;
+    border-bottom: 2px dashed #FFF;
+    margin:0;
+    outline: none;
+    padding-bottom:0;
+}
+.online-quote input[type=text]:focus:invalid:focus, .online-quote input[type=email]:focus:invalid:focus {
+    border-color:#ef7a7e;
+}
+.online-quote .control-group {
+    margin-bottom:30px;
+}
+
+.online-quote select {
+    display:block;
+    font-family: "Times", serif;
+    font-size:16px;
+    background-color: #7ec4a1;
+    width:100%;
+    margin:0 0 15px 0;
+}
+.online-quote select option {
+    display:block;
+    font-family: "Times", serif;
+    font-size:16px;
+    background-color: #FFF;
+}
+
+.online-quote .quote-form {
+    margin:30px 0 30px 0;
+}
+.online-quote textarea {
+    width:100%;
+    display:block;
+    height:100px;
+    margin-bottom:15px;
+}
+.online-quote .already-client input, .online-quote .already-client label {
+    display:inline-block;
+}
+.online-quote .already-client input {
+    margin-top:-5px;
+}
+.online-quote input[type=submit] {
+    background: url('/images/icons/send-icon.png') transparent no-repeat;
+    padding:10px 0 0 30px;
+    color: #FFF;
+    font-family: "Noesis", sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border:none;
+    text-align: left;
+    min-height:25px;
+    float:right;
+    outline: none;
+}
+.online-quote input[type=submit]:hover {
+    border-bottom:1px solid #FFF;
+}
+.online-quote .help-block {
+    margin:0;
+    padding:0;
+}
+.online-quote .control-group.success .control-label, .online-quote .control-group.success .help-block {
+    color: #7ec4a1;
+}
+.online-quote .control-group.error .control-label, .online-quote .control-group.error .help-block {
+    color: #ef7a7e;
+}
+.online-quote .control-group.warning .control-label,  .online-quote .control-group.warning .help-block {
+    color: #ef7a7e;
+}
+.online-quote .loader-container {
+    margin:8px 0 0 10px;
+    padding:0;
+    width:24px;
+    height:24px;
+    display:block;
+}
+.online-quote .loader-white {
+    display:none;
+    background: url('/images/loaders/arrow-loader.gif') no-repeat;
+    width:24px;
+    height:24px;
+    margin:0;
+    padding:0;
+}
+
+.online-quote .error-on-submit, .online-quote .success-on-submit {
+    color: #ef7a7e;
+    display:block;
+    font-weight:bold;
+    font-size: 15px;
+    position:absolute;
+    bottom:-20px;
+    right:33px;
+}
+.online-quote .success-on-submit {
+    color: #7ec4a1;
+}
+
+.online-quote .submit-container {
+    position:relative;
+    padding-right:0;
+}

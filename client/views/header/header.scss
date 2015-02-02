@@ -1,0 +1,279 @@
+/*****************************************************************************/
+/* Header: Style */
+/*****************************************************************************/
+.header-content {
+    padding: 15px 0 0 0;
+
+    .entete {
+
+        position:relative;
+        max-width: 1003px;
+        margin:auto;
+
+        .entete-gauche {
+            padding-top: 5px;
+
+            .login {
+                margin:4px 0 0 0;
+                font-family: "Noesis", sans-serif;
+                font-weight: bold;
+                font-size: 16px;
+                text-decoration: none;
+                list-style-type: none;
+                list-style-image: none;
+                list-style-position: inside;
+                padding-left:10px;
+
+                .dropdown {
+                    list-style-type: none;
+                    list-style-image: none;
+                    list-style-position: inside;
+                }
+            }
+        }
+
+        h1 {
+            float: none;
+            clear: both;
+            margin: 80px 0 0 0;
+            font-family: "Noesis", sans-serif;
+            font-size: 56px;
+
+            a,a:hover {
+                text-decoration: none;
+                color: inherit;
+                padding: 10px 0 5px 0;
+            }
+        }
+
+        .langues {
+            .drapeau {
+                width: 33px;
+                height: 20px;
+                margin:0 10px 0 0;
+                padding: 0;
+                float:left;
+                -moz-box-sizing: content-box;
+                box-sizing: content-box;
+                margin-top:2px;
+                cursor: pointer;
+            }
+            .selected-language {
+                border:2px solid #000;
+                margin-top:0;
+                cursor:default;
+            }
+            .drapeau-fr {
+                background: url('/images/drapeau_fr.png') no-repeat;
+            }
+
+            .drapeau-en {
+                background: url('/images/drapeau_en.png') no-repeat;
+            }
+        }
+
+        .recherche {
+            font-family: "Noesis", sans-serif;
+            width: 170px;
+            height: 37px;
+            color:#000;
+            line-height: 37px;
+            padding: 5px 25px 0px 25px;
+            font-size: 19px;
+            font-weight: bold;
+            background: url('/images/bg_rechercher.png') no-repeat;
+            display:block;
+            border:none;
+            outline: none;
+            margin:0 0 0 20px;
+
+            @include input-placeholder {
+              color: #bfbfbf;
+              font-style: italic;
+            }
+
+            &:focus {
+                outline: none !important;
+                box-shadow:none !important;
+                border:none !important;
+            }
+            .recherche::-webkit-input-placeholder { /* WebKit browsers */
+                color:    #000;
+                opacity:1;
+            }
+            .recherche:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+                color:    #000;
+                opacity:1;
+            }
+            .recherche::-moz-placeholder { /* Mozilla Firefox 19+ */
+                color:    #000;
+                opacity:1;
+            }
+            .recherche:-ms-input-placeholder { /* Internet Explorer 10+ */
+                color:    #000;
+                opacity:1;
+            }
+        }
+
+        .mini-card {
+            display:block;
+            float:right;
+            width:66px;
+            height:40px;
+            padding:7px 5px 5px 5px;
+            color:#FFF;
+            font-size:13px;
+            background: url('/images/bg_carte_visite-mini.png') no-repeat;
+            margin-right:20px;
+            cursor:pointer;
+        }
+        .entete-droite {
+            padding:0;
+        }
+    }
+}
+
+
+
+header .entete .carte-visite {
+    font-family: "Noesis", sans-serif;
+    width: 279px;
+    height:168px;
+    padding: 0;
+    margin: 0;
+    background: url('/images/bg_carte_visite-haute.png') no-repeat;
+    color: #7ec4a1;
+    text-align: center;
+    float:right;
+}
+
+header .entete .carte-visite .pseudo-hr {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 15px;
+    padding:0;
+    display: inline-block;
+    margin:7px 0 -5px 0;
+}
+
+header .entete .carte-visite h2 {
+    text-align: center;
+    padding:15px 0 0 0;
+    margin:0;
+    color: #7ec4a1;
+    font-size: 30px;
+    width:279px;
+    height:57px;
+}
+
+header .entete .carte-visite h3 {
+    line-height: 17px;
+    margin:0;
+    padding:0 0 10px 0;
+    font-size: 0.9em;
+    color: #FFF;
+    font-weight: bold;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+}
+header .entete .carte-visite h3 .en-valeur {
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+header .entete .carte-visite .carte-visite-contenu {
+    text-align: left;
+    padding-left: 40px;
+    line-height: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+header .entete .carte-visite .white-text {
+    color: #FFF;
+    font-weight: normal;
+}
+header .entete .construction {
+    float:none;
+    clear:both;
+    padding:10px;
+    top: 135px;
+    margin:auto;
+    font-size:20px;
+    color: #ef7a7e;
+    font-weight:bold;
+    position:absolute;
+}
+header .menu {
+    padding: 15px 0 10px 0;
+    float: none;
+    clear: both;
+    font-size: 36px;
+    max-width: 1003px;
+    position:relative;
+    margin:0 auto 30px auto;
+}
+
+header .menu ul {
+    margin: 0;
+    padding: 0;
+    font-family: "Noesis", sans-serif;
+}
+header .menu ul.nav li {
+    padding:0;
+    margin:0;
+    text-align: center;
+    line-height: 20px;
+    margin-bottom:15px;
+    position:relative;
+}
+
+header .menu ul.nav li a, header .menu ul.nav li.divider {
+    padding:18px 0 5px 0;
+    margin: 0;
+    font-family: "Noesis", sans-serif;
+    color: #000;
+    text-decoration: none;
+}
+.menu-item-info {
+    display:none;
+    font-size:0.4em;
+    font-family:"Times", serif;
+    font-style: italic;
+    text-align: left;
+    padding:5px 20px 0 25px;
+    line-height:13px;
+    color:#3b4759;
+    position:absolute;
+    top:35px;
+    left:0;
+}
+header .menu ul.nav li.clicked-menu-item a, header .menu ul.nav li.clicked-menu-item a:visited {
+    color:#3b4759;
+}
+
+
+header .menu ul.nav li a:visited {
+    font-family: "Noesis", sans-serif;
+    color: #000;
+    text-decoration: none;
+}
+header .menu ul li a:hover {
+    text-decoration: none;
+}
+.menu-md-adjusted-margin {
+    margin-left:-6%;
+}
+
+.social-network-link img {
+    width:25px;
+}
+
+.sober-inline-list {
+    list-style-type: none;
+    list-style-image: none;
+    list-style-position: inside;
+}
+.sober-inline-list li {
+    display:block;
+    float:left;
+    margin: 0 10px 0 0;
+}

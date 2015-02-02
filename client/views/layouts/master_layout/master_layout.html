@@ -1,0 +1,74 @@
+<template name="MasterLayout">
+    <div class="online-quote" id="online-quote">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="white-title ">Obtenir un devis</div>
+                    <div class="white-subtitle">Veuillez résumer vos besoins et vos informations de contact<br /> dans le formulaire ci-dessous, puis valider.</div>
+                </div>
+                <form id="quote-form" class="quote-form col-xs-12" novalidate>
+                    <div class="col-md-1 hidden-xs hidden-sm"></div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="control-group">
+                            <label class="control-label">Nom complet :</label>
+                            <div class="controls">
+                              <input name="full-name-field" id="full-name-field" type="text" data-validation-required-message="Ce champ est requis" required/>
+                              <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Adresse e-mail :</label>
+                            <div class="controls">
+                              <input name="email-field" data-validation-email-message="Adresse email invalide" id="email-field" type="email" data-validation-required-message="Ce champ est requis" required/>
+                              <p class="help-block"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <label>Type de projet :</label>
+                        <select name="project-type-field" id="project-type-field">
+                            <option>Site/application web JavaScript</option>
+                            <option>Développements/déboguages JavaScript</option>
+                            <option>Formation JavaScript (+ bibliothèques)</option>
+                            <option>Site/application Web PHP/.NET</option>
+                            <option>CMS (Wordpress, Joomla!, etc.)</option>
+                            <option>Autre</option>
+                        </select>
+                        <label>Type de commanditaire : </label>
+                        <select name="client-type-field" id="client-type-field">
+                            <option>Entreprise privée</option>
+                            <option>Organisme publique</option>
+                            <option>Association</option>
+                            <option>Particulier</option>
+                            <option>Autre</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <label>Message :</label>
+                        <textarea id="message-field" name="message-field" placeholder="Bonjour Loïc, j'aurais besoin d'un nouveau script qui fait le café et qui tond la pelouse A.S.A.P. !"></textarea>
+                        <div class="col-xs-12 submit-container">
+                            <div class="loader-container pull-right">
+                                <div id="online-quote-loader" class="loader-white">
+                                </div>
+                            </div>
+                            <input class="pull-right" type="submit" value="Envoyer" />
+                        </div>
+                    </div>
+                    <div class="col-md-1 hidden-xs hidden-sm"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="quote-row" id="quote-row">
+    </div>
+    <div class="container">
+        <div class="get-quote" id="get-quote"><span class="get-quote-text">Devis</span></div>
+        <header>
+            {{> Header}}
+        </header>
+        {{> yield}}
+        <footer>
+            {{> Footer}}
+        </footer>
+    </div>
+</template>

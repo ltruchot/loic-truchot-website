@@ -1,0 +1,60 @@
+<template name="Header">
+    <div class="header-content">
+        <div class="row">
+            <div class="entete">
+                <div class="hidden-lg hidden-md col-sm-1 hidden-xs"></div>
+                <div class="entete-gauche col-lg-7 col-md-8 col-sm-7 col-xs-12">
+                    <div class="langues pull-left">
+                        <div class="drapeau drapeau-fr selected-language"></div>
+                        <div class="drapeau drapeau-en"></div>
+                    </div>
+                    <ul class="login pull-left">{{>loginButtons}}</ul>
+                    <ul id="social-networks-list" class="sober-inline-list pull-left">
+                        <li><a class="social-network-link" href="#"><img src="/images/social_networks/youtube.gif" /></a></li>
+                        <li><a class="social-network-link" href="https://twitter.com/n_a_n35"><img src="/images/social_networks/twitter.gif" /></a></li>
+                        <li><a class="social-network-link" href="#"><img src="/images/social_networks/facebook.gif" /></a></li>
+                    </ul>
+                    <input type="text" class="recherche pull-left" placeholder="Rechercher_" />
+                    <h1 id="site-title"><a href="{{pathFor 'home'}}">{Noesis and Neighbors}</a><div class="mini-card hidden-lg hidden-md hidden-sm">prendre une carte</div></h1>
+                </div>
+                <div class="entete-droite col-lg-5 col-md-3 col-sm-3 hidden-xs">
+                    <div class="carte-visite">
+                        <h2>Loïc Truchot</h2>
+                        <h3>
+                            développeur, architecte, formateur<br/>
+                            <span class="en-valeur">JavaScript</span></h3>
+                        <div class="carte-visite-contenu">
+                            contact = {<br />
+                            &nbsp;&nbsp;tel : <span class="white-text">06 70 600 500</span>, ville :&nbsp; <span class="white-text">Rennes</span>,<br />
+                            &nbsp;&nbsp;mail : <a class="white-text" href="mailto:loic.truchot35@gmail.com">"loic.truchot35@gmail.com"</a><br />
+                            };
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden-lg col-md-1 col-sm-1 hidden-xs"></div>
+    <!--            <div class="construction">Ce site est en construction, veuillez revenir à partir du 1er Mai 2014.</div>-->
+            </div>
+        </div>
+        <div class="row">
+            <nav class="navbar menu" role="navigation">
+                <ul id="#main-nav-menu" class="nav col-md-12 col-sm-12 col-xs-12">
+                    <li class="main-menu-item col-md-2 col-sm-6 col-xs-12">
+                        <a href="{{pathFor 'parcours'}}">parcours<span class="menu-item-info">CV: profil, exp. pro., compétences</span></a>
+                    </li>
+                    <li class="divider col-md-1 hidden-sm hidden-xs">||</li>
+                    <li class="main-menu-item col-md-2 col-sm-6 col-xs-12">
+                        <a href="{{pathFor 'realisations'}}" class="menu-md-adjusted-margin"> réalisations<span class="menu-item-info">Portefolio, revue de code et démos</span></a>
+                    </li>
+                    <li class="divider col-md-1 hidden-sm hidden-xs">||</li>
+                    <li class="main-menu-item col-md-2 col-sm-6 col-xs-12">
+                        <a href="{{pathFor 'articles'}}"> articles<span class="menu-item-info">Blog thématique sur JS dans tous ses états</span></a>
+                    </li>
+                    <li class="divider col-md-1  hidden-sm hidden-xs">||</li>
+                    <li class="main-menu-item col-md-3 col-sm-6 col-xs-12">
+                        <a href="{{pathFor 'nan'}}"> Noesis&nbsp;+&nbsp;NaN.js<span class="menu-item-info">L'entreprise, sa forme et les projets NaNjs et NoBO</span></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</template>

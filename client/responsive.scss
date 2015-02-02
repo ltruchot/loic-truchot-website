@@ -1,0 +1,111 @@
+@media (max-width: 480px) {
+/* Landscape phones and down */
+    body {
+        width:100%;
+        padding:0;
+    }
+    .menu-md-adjusted-margin {
+        margin-left:0;
+    }
+    header .entete h1 {
+        margin:75px 0 0 0 !important;
+        padding:0 !important;
+        font-size:70px !important;
+        text-align: center !important;
+    }
+    .recherche {
+        display:none !important;
+    }
+    header .menu ul.nav li {
+        padding-bottom:10px !important;
+    }
+    .get-quote{
+        right:0 !important;
+        top:-35px !important;
+    }
+    .get-quote .get-quote-text {
+        display:none;
+    }
+    #social-networks-list {
+        clear:left !important;
+        margin:10px 0 !important;
+    }
+    .mini-card {
+        margin-right:10px !important;
+    }
+
+}
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+/* Landscape phone to portrait tablet */
+    body {
+        width:100%;
+        padding:0;
+    }
+    .menu-md-adjusted-margin {
+        margin-left:0;
+    }
+    header .entete h1 {
+        margin:65px 0 0 0 !important;
+        padding:0 !important;
+        font-size:70px !important;
+        text-align: center !important;
+    }
+    .recherche {
+        display:none !important;
+    }
+    header .menu ul.nav li {
+        padding-bottom:10px !important;
+    }
+    .get-quote{
+        right:0 !important;
+    }
+    .mini-card {
+        margin-right:100px !important;
+    }
+    .menu-item-info {
+        left:30%;
+    }
+    .skill-table > tbody > tr > td:first-child {
+        width: 50px !important;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+/* Portrait tablet to landscape and desktop */
+
+    .menu-md-adjusted-margin {
+        margin-left:0;
+    }
+    header .entete h1 {
+        margin:65px 0 0 0 !important;
+        font-size:90px !important;
+    }
+    .recherche {
+        display:none !important;
+    }
+    .get-quote{
+        right:0 !important;
+    }
+    .menu-item-info {
+        left:20%;
+    }
+
+}
+@media (min-width: 980px) and (max-width: 1199px) {
+/* smaller desktop (non bootstrap) */
+
+    .menu-md-adjusted-margin {
+        margin-left:0;
+    }
+    .get-quote{
+        right:0 !important;
+    }
+
+
+}
+@media (min-width: 1200px) {
+/*  Large desktop */
+}

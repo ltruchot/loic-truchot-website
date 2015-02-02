@@ -1,0 +1,59 @@
+/*****************************************************************************/
+/* HomeIndex: Style */
+/*****************************************************************************/
+.home-content {
+    padding:0;
+}
+.stand {
+    background: url('/images/bgtop-article.png') no-repeat;
+    min-height: 300px;
+    width:231px;
+    padding:2px 0 0 0;
+    margin:0;
+    margin:auto;
+    float:none;
+
+}
+
+.stand .stand-content {
+  font-size: 14px;
+  margin:0 15px 0 0;
+  background-color: #FFF;
+  min-height: 300px;
+  position:relative;
+  line-height: 17px;
+
+}
+
+.stand .stand-content img {
+    max-width: 150px;
+    display:block;
+    margin:15px auto 0 auto;
+    padding: 5px;
+    border:dashed 1px #6459a2;
+}
+
+.stand  h3 {
+  font-family: "Noesis", sans-serif;
+  text-align: center;;
+  padding: 7px 0 0 0;
+  font-size: 17px;
+}
+.stand .force-text-right {
+    text-align: right !important;
+    padding-right: 5px;
+}
+.stand p {
+  color: #000;
+  text-align:justify;
+  padding:0 10px;
+  font-family: Times, serif;
+}
+.stand .voir {
+  font-family: "Noesis", sans-serif;
+  color: #ef7a7e;
+  position: absolute;
+  font-size:16px;
+  bottom: 15px;
+  right: 15px;
+}

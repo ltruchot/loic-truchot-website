@@ -1,0 +1,817 @@
+/*****************************************************************************/
+/* Global CSS Styles */
+/*****************************************************************************/
+@font-face {
+  font-family: 'Noesis';
+  src: url("/fonts/noesis.eot");
+  src: url("/fonts/noesis.eot?#iefix") format("embedded-opentype");
+  src: url("/fonts/noesis.ttf") format("truetype"), url("/fonts/noesis.otf") format("opentype"), url("/fonts/noesis.woff") format("woff"), url("/fonts/noesis.svg#TruchotteRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* line 22, ../app.scss */
+body {
+  background: url("/images/bg_colline-ld.png") no-repeat;
+  background-color: #fcf7e3;
+  background-position: top center;
+  font-size: 12px;
+  line-height: 20px;
+  word-spacing: 0;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  color: #000;
+  text-decoration: none;
+  font-family: Times, serif;
+  position: relative;
+  text-rendering: optimizeLegibility;
+}
+
+/* line 39, ../app.scss */
+.clear {
+  float: none;
+  clear: both;
+  width: 100%;
+  height: 1px;
+  border: none;
+  color: transparent;
+  background-color: transparent;
+  display: block;
+}
+
+/*****************************************************************************/
+/* MasterLayout: Style */
+/*****************************************************************************/
+/* line 4, ../views/layouts/master_layout/master_layout.scss */
+.quote-row {
+  width: 100%;
+  background: url("/images/braun_wave-3.png") repeat-x;
+  height: 10px;
+  z-index: 10;
+  position: relative;
+}
+
+/* line 11, ../views/layouts/master_layout/master_layout.scss */
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+/* line 15, ../views/layouts/master_layout/master_layout.scss */
+.get-quote {
+  background: url("/images/get_quote-4.png") no-repeat;
+  width: 54px;
+  height: 108px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 1;
+  cursor: pointer;
+  text-align: center;
+  color: #FFF;
+  font-family: "Noesis", sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+  padding-top: 22px;
+}
+
+/* line 32, ../views/layouts/master_layout/master_layout.scss */
+.online-quote {
+  width: 100%;
+  background-color: #241313;
+  z-index: 10;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  -webkit-transform: translateZ(0);
+  margin-bottom: -1px;
+  display: none;
+}
+
+/* line 44, ../views/layouts/master_layout/master_layout.scss */
+.online-quote .white-title {
+  font-family: "Noesis", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #FFF;
+  text-align: center;
+  padding: 30px 0 0 0;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* line 54, ../views/layouts/master_layout/master_layout.scss */
+.online-quote .white-subtitle {
+  font-family: Times, serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #FFF;
+  text-align: center;
+  padding: 5px 0 0 0;
+  font-style: italic;
+  margin: 0;
+}
+
+/* line 64, ../views/layouts/master_layout/master_layout.scss */
+.online-quote label {
+  display: block;
+  font-family: "Noesis", sans-serif;
+  font-size: 17px;
+  color: #FFF;
+}
+
+/* line 70, ../views/layouts/master_layout/master_layout.scss */
+.online-quote input[type=text], .online-quote input[type=email] {
+  display: block;
+  font-family: "Times", serif;
+  font-size: 16px;
+  color: #FFF;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px dashed #FFF;
+  margin: 0;
+  outline: none;
+  padding-bottom: 0;
+}
+
+/* line 82, ../views/layouts/master_layout/master_layout.scss */
+.online-quote input[type=text]:focus:invalid:focus, .online-quote input[type=email]:focus:invalid:focus {
+  border-color: #ef7a7e;
+}
+
+/* line 85, ../views/layouts/master_layout/master_layout.scss */
+.online-quote .control-group {
+  margin-bottom: 30px;
+}
+
+/* line 89, ../views/layouts/master_layout/master_layout.scss */
+.online-quote select {
+  display: block;
+  font-family: "Times", serif;
+  font-size: 16px;
+  background-color: #7ec4a1;
+  width: 100%;
+  margin: 0 0 15px 0;
+}
+
+/* line 97, ../views/layouts/master_layout/master_layout.scss */
+.online-quote select option {
+  display: block;
+  font-family: "Times", serif;
+  font-size: 16px;
+  background-color: #FFF;
+}
+
+/* line 104, ../views/layouts/master_layout/master_layout.scss */
+.online-quote .quote-form {
+  margin: 30px 0 30px 0;
+}
+
+/* line 107, ../views/layouts/master_layout/master_layout.scss */
+.online-quote textarea {
+  width: 100%;
+  display: block;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+/* line 113, ../views/layouts/master_layout/master_layout.scss */
+.online-quote .already-client input, .online-quote .already-client label {
+  display: inline-block;
+}
+
+/* line 116, ../views/layouts/master_layout/master_layout.scss */
+.online-quote .already-client input {
+  margin-top: -5px;
+}
+
+/* line 119, ../views/layouts/master_layout/master_layout.scss */
+.online-quote input[type=submit] {
+  background: url("/images/icons/send-icon.png") transparent no-repeat;
+  padding: 10px 0 0 30px;
+  color: #FFF;
+  font-family: "Noesis", sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  text-align: left;
+  min-height: 25px;
+  float: right;
+  outline: none;
+}
+
+/* line 133, ../views/layouts/master_layout/master_layout.scss */
+.online-quote input[type=submit]:hover {
+  border-bottom: 1px solid #FFF;
+}
+
+/* line 136, ../views/layouts/master_layout/master_layout.scss */
+.online-quote .help-block {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 140, ../views/layouts/master_layout/master_layout.scss */
+.online-quote .control-group.success .control-label, .online-quote .control-group.success .help-block {
+  color: #7ec4a1;
+}
+
+/* line 143, ../views/layouts/master_layout/master_layout.scss */
+.online-quote .control-group.error .control-label, .online-quote .control-group.error .help-block {
+  color: #ef7a7e;
+}
+
+/* line 146, ../views/layouts/master_layout/master_layout.scss */
+.online-quote .control-group.warning .control-label, .online-quote .control-group.warning .help-block {
+  color: #ef7a7e;
+}
+
+/* line 149, ../views/layouts/master_layout/master_layout.scss */
+.online-quote .loader-container {
+  margin: 8px 0 0 10px;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* line 156, ../views/layouts/master_layout/master_layout.scss */
+.online-quote .loader-white {
+  display: none;
+  background: url("/images/loaders/arrow-loader.gif") no-repeat;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 165, ../views/layouts/master_layout/master_layout.scss */
+.online-quote .error-on-submit, .online-quote .success-on-submit {
+  color: #ef7a7e;
+  display: block;
+  font-weight: bold;
+  font-size: 15px;
+  position: absolute;
+  bottom: -20px;
+  right: 33px;
+}
+
+/* line 174, ../views/layouts/master_layout/master_layout.scss */
+.online-quote .success-on-submit {
+  color: #7ec4a1;
+}
+
+/* line 178, ../views/layouts/master_layout/master_layout.scss */
+.online-quote .submit-container {
+  position: relative;
+  padding-right: 0;
+}
+
+/*****************************************************************************/
+/* Header: Style */
+/*****************************************************************************/
+/* line 4, ../views/header/header.scss */
+.header-content {
+  padding: 15px 0 0 0;
+}
+/* line 7, ../views/header/header.scss */
+.header-content .entete {
+  position: relative;
+  max-width: 1003px;
+  margin: auto;
+}
+/* line 13, ../views/header/header.scss */
+.header-content .entete .entete-gauche {
+  padding-top: 5px;
+}
+/* line 16, ../views/header/header.scss */
+.header-content .entete .entete-gauche .login {
+  margin: 4px 0 0 0;
+  font-family: "Noesis", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  list-style-type: none;
+  list-style-image: none;
+  list-style-position: inside;
+  padding-left: 10px;
+}
+/* line 27, ../views/header/header.scss */
+.header-content .entete .entete-gauche .login .dropdown {
+  list-style-type: none;
+  list-style-image: none;
+  list-style-position: inside;
+}
+/* line 35, ../views/header/header.scss */
+.header-content .entete h1 {
+  float: none;
+  clear: both;
+  margin: 80px 0 0 0;
+  font-family: "Noesis", sans-serif;
+  font-size: 56px;
+}
+/* line 42, ../views/header/header.scss */
+.header-content .entete h1 a, .header-content .entete h1 a:hover {
+  text-decoration: none;
+  color: inherit;
+  padding: 10px 0 5px 0;
+}
+/* line 50, ../views/header/header.scss */
+.header-content .entete .langues .drapeau {
+  width: 33px;
+  height: 20px;
+  margin: 0 10px 0 0;
+  padding: 0;
+  float: left;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  margin-top: 2px;
+  cursor: pointer;
+}
+/* line 61, ../views/header/header.scss */
+.header-content .entete .langues .selected-language {
+  border: 2px solid #000;
+  margin-top: 0;
+  cursor: default;
+}
+/* line 66, ../views/header/header.scss */
+.header-content .entete .langues .drapeau-fr {
+  background: url("/images/drapeau_fr.png") no-repeat;
+}
+/* line 70, ../views/header/header.scss */
+.header-content .entete .langues .drapeau-en {
+  background: url("/images/drapeau_en.png") no-repeat;
+}
+/* line 75, ../views/header/header.scss */
+.header-content .entete .recherche {
+  font-family: "Noesis", sans-serif;
+  width: 170px;
+  height: 37px;
+  color: #000;
+  line-height: 37px;
+  padding: 5px 25px 0px 25px;
+  font-size: 19px;
+  font-weight: bold;
+  background: url("/images/bg_rechercher.png") no-repeat;
+  display: block;
+  border: none;
+  outline: none;
+  margin: 0 0 0 20px;
+}
+/* line 61, ../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+.header-content .entete .recherche:-moz-placeholder {
+  color: #bfbfbf;
+  font-style: italic;
+}
+/* line 64, ../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+.header-content .entete .recherche::-moz-placeholder {
+  color: #bfbfbf;
+  font-style: italic;
+}
+/* line 67, ../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+.header-content .entete .recherche:-ms-input-placeholder {
+  color: #bfbfbf;
+  font-style: italic;
+}
+/* line 56, ../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+.header-content .entete .recherche::-webkit-input-placeholder {
+  color: #bfbfbf;
+  font-style: italic;
+}
+/* line 95, ../views/header/header.scss */
+.header-content .entete .recherche:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+/* line 100, ../views/header/header.scss */
+.header-content .entete .recherche .recherche::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #000;
+  opacity: 1;
+}
+/* line 104, ../views/header/header.scss */
+.header-content .entete .recherche .recherche:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #000;
+  opacity: 1;
+}
+/* line 108, ../views/header/header.scss */
+.header-content .entete .recherche .recherche::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #000;
+  opacity: 1;
+}
+/* line 112, ../views/header/header.scss */
+.header-content .entete .recherche .recherche:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #000;
+  opacity: 1;
+}
+/* line 118, ../views/header/header.scss */
+.header-content .entete .mini-card {
+  display: block;
+  float: right;
+  width: 66px;
+  height: 40px;
+  padding: 7px 5px 5px 5px;
+  color: #FFF;
+  font-size: 13px;
+  background: url("/images/bg_carte_visite-mini.png") no-repeat;
+  margin-right: 20px;
+  cursor: pointer;
+}
+/* line 130, ../views/header/header.scss */
+.header-content .entete .entete-droite {
+  padding: 0;
+}
+
+/* line 138, ../views/header/header.scss */
+header .entete .carte-visite {
+  font-family: "Noesis", sans-serif;
+  width: 279px;
+  height: 168px;
+  padding: 0;
+  margin: 0;
+  background: url("/images/bg_carte_visite-haute.png") no-repeat;
+  color: #7ec4a1;
+  text-align: center;
+  float: right;
+}
+
+/* line 150, ../views/header/header.scss */
+header .entete .carte-visite .pseudo-hr {
+  color: #FFF;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 0;
+  display: inline-block;
+  margin: 7px 0 -5px 0;
+}
+
+/* line 159, ../views/header/header.scss */
+header .entete .carte-visite h2 {
+  text-align: center;
+  padding: 15px 0 0 0;
+  margin: 0;
+  color: #7ec4a1;
+  font-size: 30px;
+  width: 279px;
+  height: 57px;
+}
+
+/* line 169, ../views/header/header.scss */
+header .entete .carte-visite h3 {
+  line-height: 17px;
+  margin: 0;
+  padding: 0 0 10px 0;
+  font-size: 0.9em;
+  color: #FFF;
+  font-weight: bold;
+  word-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+/* line 179, ../views/header/header.scss */
+header .entete .carte-visite h3 .en-valeur {
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+/* line 183, ../views/header/header.scss */
+header .entete .carte-visite .carte-visite-contenu {
+  text-align: left;
+  padding-left: 40px;
+  line-height: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* line 190, ../views/header/header.scss */
+header .entete .carte-visite .white-text {
+  color: #FFF;
+  font-weight: normal;
+}
+
+/* line 194, ../views/header/header.scss */
+header .entete .construction {
+  float: none;
+  clear: both;
+  padding: 10px;
+  top: 135px;
+  margin: auto;
+  font-size: 20px;
+  color: #ef7a7e;
+  font-weight: bold;
+  position: absolute;
+}
+
+/* line 205, ../views/header/header.scss */
+header .menu {
+  padding: 15px 0 10px 0;
+  float: none;
+  clear: both;
+  font-size: 36px;
+  max-width: 1003px;
+  position: relative;
+  margin: 0 auto 30px auto;
+}
+
+/* line 215, ../views/header/header.scss */
+header .menu ul {
+  margin: 0;
+  padding: 0;
+  font-family: "Noesis", sans-serif;
+}
+
+/* line 220, ../views/header/header.scss */
+header .menu ul.nav li {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  line-height: 20px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+/* line 229, ../views/header/header.scss */
+header .menu ul.nav li a, header .menu ul.nav li.divider {
+  padding: 18px 0 5px 0;
+  margin: 0;
+  font-family: "Noesis", sans-serif;
+  color: #000;
+  text-decoration: none;
+}
+
+/* line 236, ../views/header/header.scss */
+.menu-item-info {
+  display: none;
+  font-size: 0.4em;
+  font-family: "Times", serif;
+  font-style: italic;
+  text-align: left;
+  padding: 5px 20px 0 25px;
+  line-height: 13px;
+  color: #3b4759;
+  position: absolute;
+  top: 35px;
+  left: 0;
+}
+
+/* line 249, ../views/header/header.scss */
+header .menu ul.nav li.clicked-menu-item a, header .menu ul.nav li.clicked-menu-item a:visited {
+  color: #3b4759;
+}
+
+/* line 254, ../views/header/header.scss */
+header .menu ul.nav li a:visited {
+  font-family: "Noesis", sans-serif;
+  color: #000;
+  text-decoration: none;
+}
+
+/* line 259, ../views/header/header.scss */
+header .menu ul li a:hover {
+  text-decoration: none;
+}
+
+/* line 262, ../views/header/header.scss */
+.menu-md-adjusted-margin {
+  margin-left: -6%;
+}
+
+/* line 266, ../views/header/header.scss */
+.social-network-link img {
+  width: 25px;
+}
+
+/* line 270, ../views/header/header.scss */
+.sober-inline-list {
+  list-style-type: none;
+  list-style-image: none;
+  list-style-position: inside;
+}
+
+/* line 275, ../views/header/header.scss */
+.sober-inline-list li {
+  display: block;
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+/*****************************************************************************/
+/* HomeIndex: Style */
+/*****************************************************************************/
+/* line 4, ../views/home/home_index/home_index.scss */
+.home-content {
+  padding: 0;
+}
+/* line 7, ../views/home/home_index/home_index.scss */
+.home-content .stand {
+  background: url("/images/bgtop-article.png") no-repeat;
+  min-height: 300px;
+  width: 231px;
+  padding: 2px 0 0 0;
+  margin: 0;
+  margin: auto;
+  float: none;
+}
+/* line 16, ../views/home/home_index/home_index.scss */
+.home-content .stand .stand-content {
+  font-size: 14px;
+  margin: 0 15px 0 0;
+  background-color: #FFF;
+  min-height: 300px;
+  position: relative;
+  line-height: 17px;
+}
+/* line 24, ../views/home/home_index/home_index.scss */
+.home-content .stand .stand-content h3 {
+  font-family: "Noesis", sans-serif;
+  text-align: center;
+  padding: 7px 0 0 0;
+  font-size: 17px;
+}
+/* line 31, ../views/home/home_index/home_index.scss */
+.home-content .stand .stand-content p {
+  color: #000;
+  text-align: justify;
+  padding: 0 10px;
+  font-family: Times, serif;
+}
+/* line 38, ../views/home/home_index/home_index.scss */
+.home-content .stand .stand-content img {
+  max-width: 150px;
+  display: block;
+  margin: 15px auto 0 auto;
+  padding: 5px;
+  border: dashed 1px #6459a2;
+}
+/* line 46, ../views/home/home_index/home_index.scss */
+.home-content .stand .stand-content .force-text-right {
+  text-align: right !important;
+  padding-right: 5px;
+}
+/* line 51, ../views/home/home_index/home_index.scss */
+.home-content .stand .stand-content .voir {
+  font-family: "Noesis", sans-serif;
+  color: #ef7a7e;
+  position: absolute;
+  font-size: 16px;
+  bottom: 15px;
+  right: 15px;
+}
+
+@media (max-width: 480px) {
+  /* Landscape phones and down */
+  /* line 3, ../responsive.scss */
+  body {
+    width: 100%;
+    padding: 0;
+  }
+
+  /* line 7, ../responsive.scss */
+  .menu-md-adjusted-margin {
+    margin-left: 0;
+  }
+
+  /* line 10, ../responsive.scss */
+  header .entete h1 {
+    margin: 75px 0 0 0 !important;
+    padding: 0 !important;
+    font-size: 70px !important;
+    text-align: center !important;
+  }
+
+  /* line 16, ../responsive.scss */
+  .recherche {
+    display: none !important;
+  }
+
+  /* line 19, ../responsive.scss */
+  header .menu ul.nav li {
+    padding-bottom: 10px !important;
+  }
+
+  /* line 22, ../responsive.scss */
+  .get-quote {
+    right: 0 !important;
+    top: -35px !important;
+  }
+
+  /* line 26, ../responsive.scss */
+  .get-quote .get-quote-text {
+    display: none;
+  }
+
+  /* line 29, ../responsive.scss */
+  #social-networks-list {
+    clear: left !important;
+    margin: 10px 0 !important;
+  }
+
+  /* line 33, ../responsive.scss */
+  .mini-card {
+    margin-right: 10px !important;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  /* Landscape phone to portrait tablet */
+  /* line 42, ../responsive.scss */
+  body {
+    width: 100%;
+    padding: 0;
+  }
+
+  /* line 46, ../responsive.scss */
+  .menu-md-adjusted-margin {
+    margin-left: 0;
+  }
+
+  /* line 49, ../responsive.scss */
+  header .entete h1 {
+    margin: 65px 0 0 0 !important;
+    padding: 0 !important;
+    font-size: 70px !important;
+    text-align: center !important;
+  }
+
+  /* line 55, ../responsive.scss */
+  .recherche {
+    display: none !important;
+  }
+
+  /* line 58, ../responsive.scss */
+  header .menu ul.nav li {
+    padding-bottom: 10px !important;
+  }
+
+  /* line 61, ../responsive.scss */
+  .get-quote {
+    right: 0 !important;
+  }
+
+  /* line 64, ../responsive.scss */
+  .mini-card {
+    margin-right: 100px !important;
+  }
+
+  /* line 67, ../responsive.scss */
+  .menu-item-info {
+    left: 30%;
+  }
+
+  /* line 70, ../responsive.scss */
+  .skill-table > tbody > tr > td:first-child {
+    width: 50px !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  /* Portrait tablet to landscape and desktop */
+  /* line 79, ../responsive.scss */
+  .menu-md-adjusted-margin {
+    margin-left: 0;
+  }
+
+  /* line 82, ../responsive.scss */
+  header .entete h1 {
+    margin: 65px 0 0 0 !important;
+    font-size: 90px !important;
+  }
+
+  /* line 86, ../responsive.scss */
+  .recherche {
+    display: none !important;
+  }
+
+  /* line 89, ../responsive.scss */
+  .get-quote {
+    right: 0 !important;
+  }
+
+  /* line 92, ../responsive.scss */
+  .menu-item-info {
+    left: 20%;
+  }
+}
+@media (min-width: 980px) and (max-width: 1199px) {
+  /* smaller desktop (non bootstrap) */
+  /* line 100, ../responsive.scss */
+  .menu-md-adjusted-margin {
+    margin-left: 0;
+  }
+
+  /* line 103, ../responsive.scss */
+  .get-quote {
+    right: 0 !important;
+  }
+}
+@media (min-width: 1200px) {
+  /*  Large desktop */
+}
