@@ -606,6 +606,51 @@ header .menu ul li a:hover {
 }
 
 /*****************************************************************************/
+/* Footer: Style */
+/*****************************************************************************/
+/* line 5, ../views/footer/footer.scss */
+footer .info-conception {
+  font-family: "Noesis", sans-serif;
+  margin-top: 20px;
+  text-align: center;
+}
+/* line 9, ../views/footer/footer.scss */
+footer .info-conception p {
+  text-align: center;
+  margin: 5px 0 7px 0;
+  font-size: 16px;
+}
+/* line 14, ../views/footer/footer.scss */
+footer .info-conception .partenaires {
+  margin: 5px 0 7px 0;
+  text-align: center;
+  font-size: 20px;
+  line-height: 25px;
+  background: url("../images/escalier.png") no-repeat;
+  min-height: 67px;
+}
+/* line 21, ../views/footer/footer.scss */
+footer .info-conception .partenaires a {
+  border: 0;
+  text-decoration: none;
+}
+/* line 26, ../views/footer/footer.scss */
+footer .info-conception img {
+  max-height: 20px;
+  display: inline-block;
+  margin-top: -5px;
+  border: none;
+}
+/* line 35, ../views/footer/footer.scss */
+footer hr.vaguelettes {
+  background: url("../images/bg_vaguelette.png") repeat-x;
+  height: 8px;
+  padding: 0 3px;
+  display: block;
+  margin: 75px auto 0 auto;
+}
+
+/*****************************************************************************/
 /* HomeIndex: Style */
 /*****************************************************************************/
 /* line 4, ../views/home/home_index/home_index.scss */

@@ -26,6 +26,23 @@ Template.Footer.created = function () {
 };
 
 Template.Footer.rendered = function () {
+  require([
+    "dojo/on",
+    "dojo/query"
+  ],
+  function (on, query) {
+    on(window, "resize", function () {
+      var currentWidth = window.innerWidth;
+      var canvasWidth = 900;
+      var canvasHeight = 100;
+      if ((typeof(window.canvasCreationInProgress) === 'undefined') ||  !window.canvasCreationInProgress) {
+        debugger;
+        launchBrandAquarium(canvasWidth, canvasHeight);
+      }
+
+    });
+
+  });
 };
 
 Template.Footer.destroyed = function () {
