@@ -18,7 +18,7 @@ Meteor.startup(function () {
     "dojo/domReady!"
   ],
   function (on) {
-    on(window, "resize", function () {
+    //on(window, "resize", function () {
       // if (currentWidth <= 480) {
       //   /* Landscape phones and down (non-bootstrap) */
       //   newSize = "480";
@@ -53,7 +53,7 @@ Meteor.startup(function () {
       //   newSize = "1200";
       //   $(".entete-gauche h1 a").text("{Noesis and Neighbors}");
       // }
-    });
+    //});
   });
 
 });

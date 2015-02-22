@@ -1,4 +1,4 @@
-brand = (function (context) {
+Brand = (function (context) {
 
   var position;
   var lastGoodPosition
@@ -10,7 +10,7 @@ brand = (function (context) {
   var clippedWidth;
   var clippedHeight;
 
-  function brand(inMass,inVelX,inVelY,imgUrl,imgClippedWidth, imgClippedHeight, href, name) { // constructor
+  function Brand(inMass,inVelX,inVelY,imgUrl,imgClippedWidth, imgClippedHeight, href, name) { // constructor
     var canvasById = document.getElementById('all-brands');
     var canvasAuthorizedWidth = canvasById.width - imgClippedWidth,
       canvasAuthorizedHeight = canvasById.height - imgClippedHeight;
@@ -45,7 +45,7 @@ brand = (function (context) {
     this.setHref(href);
   }
 
-  brand.prototype.getNewRandomizedPositions = function (width, height) {
+  Brand.prototype.getNewRandomizedPositions = function (width, height) {
     var randomizedX = Math.floor(Math.random() * width) + 1;
     var randomizedY = Math.floor(Math.random() * height) + 1;
     var insideIt = false;
@@ -79,27 +79,27 @@ brand = (function (context) {
      # Getters and Setters #
      ####################### */
 
-  brand.prototype.setX = function (inX) { this.position.setX(inX);}
-  brand.prototype.setY = function (inY) { this.position.setY(inY);}
+  Brand.prototype.setX = function (inX) { this.position.setX(inX);}
+  Brand.prototype.setY = function (inY) { this.position.setY(inY);}
 
-  brand.prototype.getX = function () {return this.position.getX();}
-  brand.prototype.getY = function () {return this.position.getY();}
+  Brand.prototype.getX = function () {return this.position.getX();}
+  Brand.prototype.getY = function () {return this.position.getY();}
 
-  brand.prototype.setMass = function (inMass) { this.mass = inMass;}
-  brand.prototype.getMass = function () { return this.mass;}
+  Brand.prototype.setMass = function (inMass) { this.mass = inMass;}
+  Brand.prototype.getMass = function () { return this.mass;}
 
-  brand.prototype.setImageUrl = function (imgUrl) { this.imageUrl = imgUrl;}
-  brand.prototype.getImageUrl = function () { return this.imageUrl;}
+  Brand.prototype.setImageUrl = function (imgUrl) { this.imageUrl = imgUrl;}
+  Brand.prototype.getImageUrl = function () { return this.imageUrl;}
 
-  brand.prototype.setClippedWidth = function (clippedWidth) { this.clippedWidth = clippedWidth;}
-  brand.prototype.getClippedWidth = function () { return this.clippedWidth;}
+  Brand.prototype.setClippedWidth = function (clippedWidth) { this.clippedWidth = clippedWidth;}
+  Brand.prototype.getClippedWidth = function () { return this.clippedWidth;}
 
-  brand.prototype.setClippedHeight = function (clippedHeight) { this.clippedHeight = clippedHeight;}
-  brand.prototype.getClippedHeight = function () { return this.clippedHeight;}
+  Brand.prototype.setClippedHeight = function (clippedHeight) { this.clippedHeight = clippedHeight;}
+  Brand.prototype.getClippedHeight = function () { return this.clippedHeight;}
 
-  brand.prototype.setHref = function (href) { this.href = href;}
-  brand.prototype.getHref = function () { return this.href;}
+  Brand.prototype.setHref = function (href) { this.href = href;}
+  Brand.prototype.getHref = function () { return this.href;}
 
-   return brand;
+   return Brand;
 
 })();
