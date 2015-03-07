@@ -351,6 +351,7 @@ body {
 /* line 75, ../views/header/header.scss */
 .header-content .entete .recherche {
   font-family: "Noesis", sans-serif;
+  color: #FFF;
   width: 170px;
   height: 37px;
   color: #000;
@@ -366,55 +367,35 @@ body {
 }
 /* line 61, ../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
 .header-content .entete .recherche:-moz-placeholder {
-  color: #bfbfbf;
+  color: #FFF;
   font-style: italic;
+  opacity: 1;
 }
 /* line 64, ../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
 .header-content .entete .recherche::-moz-placeholder {
-  color: #bfbfbf;
+  color: #FFF;
   font-style: italic;
+  opacity: 1;
 }
 /* line 67, ../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
 .header-content .entete .recherche:-ms-input-placeholder {
-  color: #bfbfbf;
+  color: #FFF;
   font-style: italic;
+  opacity: 1;
 }
 /* line 56, ../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
 .header-content .entete .recherche::-webkit-input-placeholder {
-  color: #bfbfbf;
+  color: #FFF;
   font-style: italic;
+  opacity: 1;
 }
-/* line 95, ../views/header/header.scss */
+/* line 97, ../views/header/header.scss */
 .header-content .entete .recherche:focus {
   outline: none !important;
   box-shadow: none !important;
   border: none !important;
 }
-/* line 100, ../views/header/header.scss */
-.header-content .entete .recherche .recherche::-webkit-input-placeholder {
-  /* WebKit browsers */
-  color: #000;
-  opacity: 1;
-}
 /* line 104, ../views/header/header.scss */
-.header-content .entete .recherche .recherche:-moz-placeholder {
-  /* Mozilla Firefox 4 to 18 */
-  color: #000;
-  opacity: 1;
-}
-/* line 108, ../views/header/header.scss */
-.header-content .entete .recherche .recherche::-moz-placeholder {
-  /* Mozilla Firefox 19+ */
-  color: #000;
-  opacity: 1;
-}
-/* line 112, ../views/header/header.scss */
-.header-content .entete .recherche .recherche:-ms-input-placeholder {
-  /* Internet Explorer 10+ */
-  color: #000;
-  opacity: 1;
-}
-/* line 118, ../views/header/header.scss */
 .header-content .entete .mini-card {
   display: block;
   float: right;
@@ -427,12 +408,12 @@ body {
   margin-right: 20px;
   cursor: pointer;
 }
-/* line 130, ../views/header/header.scss */
+/* line 116, ../views/header/header.scss */
 .header-content .entete .entete-droite {
   padding: 0;
 }
 
-/* line 138, ../views/header/header.scss */
+/* line 124, ../views/header/header.scss */
 header .entete .carte-visite {
   font-family: "Noesis", sans-serif;
   width: 279px;
@@ -445,7 +426,7 @@ header .entete .carte-visite {
   float: right;
 }
 
-/* line 150, ../views/header/header.scss */
+/* line 136, ../views/header/header.scss */
 header .entete .carte-visite .pseudo-hr {
   color: #FFF;
   font-weight: bold;
@@ -455,7 +436,7 @@ header .entete .carte-visite .pseudo-hr {
   margin: 7px 0 -5px 0;
 }
 
-/* line 159, ../views/header/header.scss */
+/* line 145, ../views/header/header.scss */
 header .entete .carte-visite h2 {
   text-align: center;
   padding: 15px 0 0 0;
@@ -466,7 +447,7 @@ header .entete .carte-visite h2 {
   height: 57px;
 }
 
-/* line 169, ../views/header/header.scss */
+/* line 155, ../views/header/header.scss */
 header .entete .carte-visite h3 {
   line-height: 17px;
   margin: 0;
@@ -478,13 +459,13 @@ header .entete .carte-visite h3 {
   letter-spacing: 1px;
 }
 
-/* line 179, ../views/header/header.scss */
+/* line 165, ../views/header/header.scss */
 header .entete .carte-visite h3 .en-valeur {
   font-size: 16px;
   letter-spacing: 2px;
 }
 
-/* line 183, ../views/header/header.scss */
+/* line 169, ../views/header/header.scss */
 header .entete .carte-visite .carte-visite-contenu {
   text-align: left;
   padding-left: 40px;
@@ -493,13 +474,13 @@ header .entete .carte-visite .carte-visite-contenu {
   font-weight: bold;
 }
 
-/* line 190, ../views/header/header.scss */
+/* line 176, ../views/header/header.scss */
 header .entete .carte-visite .white-text {
   color: #FFF;
   font-weight: normal;
 }
 
-/* line 194, ../views/header/header.scss */
+/* line 180, ../views/header/header.scss */
 header .entete .construction {
   float: none;
   clear: both;
@@ -512,7 +493,7 @@ header .entete .construction {
   position: absolute;
 }
 
-/* line 205, ../views/header/header.scss */
+/* line 191, ../views/header/header.scss */
 header .menu {
   padding: 15px 0 10px 0;
   float: none;
@@ -523,14 +504,14 @@ header .menu {
   margin: 0 auto 30px auto;
 }
 
-/* line 215, ../views/header/header.scss */
+/* line 201, ../views/header/header.scss */
 header .menu ul {
   margin: 0;
   padding: 0;
   font-family: "Noesis", sans-serif;
 }
 
-/* line 220, ../views/header/header.scss */
+/* line 206, ../views/header/header.scss */
 header .menu ul.nav li {
   padding: 0;
   margin: 0;
@@ -540,7 +521,7 @@ header .menu ul.nav li {
   position: relative;
 }
 
-/* line 229, ../views/header/header.scss */
+/* line 215, ../views/header/header.scss */
 header .menu ul.nav li a, header .menu ul.nav li.divider {
   padding: 18px 0 5px 0;
   margin: 0;
@@ -549,7 +530,7 @@ header .menu ul.nav li a, header .menu ul.nav li.divider {
   text-decoration: none;
 }
 
-/* line 236, ../views/header/header.scss */
+/* line 222, ../views/header/header.scss */
 .menu-item-info {
   display: none;
   font-size: 0.4em;
@@ -564,41 +545,41 @@ header .menu ul.nav li a, header .menu ul.nav li.divider {
   left: 0;
 }
 
-/* line 249, ../views/header/header.scss */
+/* line 235, ../views/header/header.scss */
 header .menu ul.nav li.clicked-menu-item a, header .menu ul.nav li.clicked-menu-item a:visited {
   color: #3b4759;
 }
 
-/* line 254, ../views/header/header.scss */
+/* line 240, ../views/header/header.scss */
 header .menu ul.nav li a:visited {
   font-family: "Noesis", sans-serif;
   color: #000;
   text-decoration: none;
 }
 
-/* line 259, ../views/header/header.scss */
+/* line 245, ../views/header/header.scss */
 header .menu ul li a:hover {
   text-decoration: none;
 }
 
-/* line 262, ../views/header/header.scss */
+/* line 248, ../views/header/header.scss */
 .menu-md-adjusted-margin {
   margin-left: -6%;
 }
 
-/* line 266, ../views/header/header.scss */
+/* line 252, ../views/header/header.scss */
 .social-network-link img {
   width: 25px;
 }
 
-/* line 270, ../views/header/header.scss */
+/* line 256, ../views/header/header.scss */
 .sober-inline-list {
   list-style-type: none;
   list-style-image: none;
   list-style-position: inside;
 }
 
-/* line 275, ../views/header/header.scss */
+/* line 261, ../views/header/header.scss */
 .sober-inline-list li {
   display: block;
   float: left;

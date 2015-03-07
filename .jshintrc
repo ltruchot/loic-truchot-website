@@ -18,6 +18,7 @@
     "globals": {
         //false = readable only global
         //true = readable and writeable global
-        "wptv": true //Webtv JS Client global
+        "Router": false,
+        "Template": false
     }
 }

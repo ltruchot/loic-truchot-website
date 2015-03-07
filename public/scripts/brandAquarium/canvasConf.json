@@ -1,0 +1,23 @@
+{
+    "xs" :{
+      "canvasWidth": 250,
+      "canvasHeight": 250
+    },
+    "sm": {
+      "canvasWidth": 400,
+      "canvasHeight": 200
+    },
+    "md": {
+      "canvasWidth": 650,
+      "canvasHeight": 150
+
+    },
+    "lg": {
+      "canvasWidth": 750,
+      "canvasHeight": 130
+    },
+    "xl": {
+      "canvasWidth": 900,
+      "canvasHeight": 100
+    }
+}
