@@ -1,105 +1,126 @@
-Simulation = (function (Context) {
-    var canvas_Width;
-    var canvas_Height;
+define([
+    "dojo/_base/array",
+    "dojo/_base/declare",
+    "dojo/_base/lang",
+    "dojo/dom",
+    "scripts/brandAquarium/Vector.js"
+],
+function (array, declare, lang, dom, Vector) {
+return declare(null, {
 
-    function Simulation(inWidth,inHeight) {
+    canvasWidth: null,
+    canvasHeight: null,
+
+    constructor: function (inWidth,inHeight) {
         // set simulations canvas width and height.
-        canvas_Width = inWidth;
-        canvas_Height = inHeight;
-    }
-    Simulation.prototype.update = function (deltaTime, ballArray) {
-        /*#### Move balls ####### */
-        updateBallPos(deltaTime, ballArray);
+        this.canvasWidth = inWidth;
+        this.canvasHeight = inHeight;
+    },
+
+    update: function (deltaTime, brandArray) {
+        /*#### Move brands ####### */
+        this.updateBrandPos(deltaTime, brandArray);
         /*##### Wall collision ####### */
-        checkWallCollision(ballArray);
-        /*###### ball ball collision ######## */
-        for (var i = 0; i < ballArray.length; i++) {
-            for (var j = 0; j < ballArray.length; j++) {
-                if (ballArray[i] != ballArray[j]) {
-                    if (checkBallCollision(ballArray[i], ballArray[j])) {
-                        ballCollisionResponce(ballArray[i], ballArray[j]);
+        this.checkWallCollision(brandArray);
+        /*###### brand/brand collision ######## */
+        array.forEach(brandArray, lang.hitch(this, function (brand) {
+            array.forEach(brandArray, lang.hitch(this, function (comparedBrand) {
+                if (brand !== comparedBrand) {
+                    if (this.checkBrandCollision(brand, comparedBrand)) {
+                        this.brandCollisionResponse(brand, comparedBrand);
                     }
                 }
+            }));
+        }));
+
+    },
+
+
+    updateBrandPos: function (deltaTime, brandArray) {
+        array.forEach(brandArray, function (brand) {
+            brand.lastGoodPosition = brand.position; // save the brand last good position.
+            var currentVelocity = brand.velocity.multiply(deltaTime/10);
+            var newBrandPositions = brand.position.add(currentVelocity);
+            brand.position = new Vector(newBrandPositions.x, newBrandPositions.y); // add the brands (velocity * deltaTime) to position.
+        });
+    },
+
+    checkWallCollision: function (brandArray) {
+        array.forEach(brandArray, lang.hitch(this, function (brand) {
+
+            /*##### Collisions on the X axis ##### */
+            var toRightToX = brand.getX() + (brand.getClippedWidth()) >= this.canvasWidth;
+            var toLeftToX = brand.getX() - (brand.getClippedWidth()) <= 0;
+
+            if (toRightToX || toLeftToX) {
+                    brand.velocity.x = -brand.velocity.x; // if collided with a wall on x Axis, reflect Velocity.X.
+                    brand.position = brand.lastGoodPosition; // reset brand to the last good position (Avoid objects getting stuck in each other).
             }
-        }
+
+            /*##### Collisions on the Y axis ##### */
+            var underY = brand.getY() <= 0;
+            var overY = brand.getY() + brand.getClippedHeight() >= this.canvasHeight;
+            if (underY || overY) { // check for y collisions.
+                    brand.velocity.y = -brand.velocity.y; // if collided with a wall on x Axis, reflect Velocity.X.
+                    brand.position = brand.lastGoodPosition;
+            }
+        }));
+    },
+
+    checkBrandCollision: function (brand1, brand2) {
+
+        var x1 = brand1.getX(),
+            x2 = brand2.getX(),
+            w1 = brand1.getClippedWidth(),
+            w2 = brand2.getClippedWidth(),
+            y1 = brand1.getY(),
+            y2 = brand2.getY(),
+            h1 = brand1.getClippedHeight(),
+            h2 = brand2.getClippedHeight();
+        var isInWidth = (x1 <= x2+w2) && (x1+w1 >= x2),
+            isInHeight = (y1 <= y2+h2) && (y1+h1 >= y2);
+
+        return  (isInWidth && isInHeight);
+
+    },
+
+    brandCollisionResponse: function (brand1, brand2) {
+            var xDistance = (brand2.getX() - brand1.getX());
+            var yDistance = (brand2.getY() - brand1.getY());
+
+            var normalVector = new Vector(xDistance, yDistance); // normalise this vector store the return value in normal vector.
+            normalVector.normalise();
+
+
+            var tangentVector = new Vector((normalVector.y * -1), normalVector.x);
+
+            // create ball scalar normal direction.
+            var brand1scalarNormal =  normalVector.dot(brand1.velocity);
+            var brand2scalarNormal = normalVector.dot(brand2.velocity);
+
+            // create scalar velocity in the tagential direction.
+            var brand1scalarTangential = tangentVector.dot(brand1.velocity);
+            var brand2scalarTangential = tangentVector.dot(brand2.velocity);
+
+            var brand1ScalarNormalAfter = (brand1scalarNormal * (brand1.getMass() - brand2.getMass()) + 2 * brand2.getMass() * brand2scalarNormal) / (brand1.getMass() + brand2.getMass());
+            var brand2ScalarNormalAfter = (brand2scalarNormal * (brand2.getMass() - brand1.getMass()) + 2 * brand1.getMass() * brand1scalarNormal) / (brand1.getMass() + brand2.getMass());
+
+            var brand1scalarNormalAfterVector = normalVector.multiply(brand1ScalarNormalAfter); // brand1Scalar normal doesnt have multiply not a vector.
+            var brand2scalarNormalAfterVector = normalVector.multiply(brand2ScalarNormalAfter);
+
+            var brand1ScalarNormalVectorPositions = (tangentVector.multiply(brand1scalarTangential));
+            var brand1ScalarNormalVector = new Vector(brand1ScalarNormalVectorPositions.x, brand1ScalarNormalVectorPositions.y);
+            var brand2ScalarNormalVectorPositions = (tangentVector.multiply(brand2scalarTangential));
+            var brand2ScalarNormalVector = new Vector(brand2ScalarNormalVectorPositions.x, brand2ScalarNormalVectorPositions.y);
+
+            var brand1VelocityPositions = brand1ScalarNormalVector.add(brand1scalarNormalAfterVector);
+            var brand2VelocityPositions = brand2ScalarNormalVector.add(brand2scalarNormalAfterVector);
+            brand1.velocity = new Vector(brand1VelocityPositions.x, brand1VelocityPositions.y);
+            brand2.velocity = new Vector(brand2VelocityPositions.x, brand2VelocityPositions.y);
+
+            brand1.position = brand1.lastGoodPosition;
+            brand2.position = brand2.lastGoodPosition;
     }
 
-
-    function updateBallPos(deltaTime, ballArray) {
-        for (var i = 0; i < ballArray.length; i++) {
-          ballArray[i].lastGoodPosition = ballArray[i].position; // save the balls last good position.
-          ballArray[i].position = ballArray[i].position.add((ballArray[i].velocity.multiply(deltaTime/10))); // add the balls (velocity * deltaTime) to position.
-        }
-    }
-    function checkWallCollision(ballArray) {
-        for (var i = 0; i < ballArray.length; i++) {
-
-          /*##### Collisions on the X axis ##### */
-          toRightToX = ballArray[i].getX() + (ballArray[i].getClippedWidth()) >= canvas_Width;
-          toLeftToX = ballArray[i].getX() - (ballArray[i].getClippedWidth()) <= 0;
-
-          if (toRightToX || toLeftToX) {
-              ballArray[i].velocity.setX(-ballArray[i].velocity.getX()); // if collided with a wall on x Axis, reflect Velocity.X.
-              ballArray[i].position = ballArray[i].lastGoodPosition; // reset ball to the last good position (Avoid objects getting stuck in each other).
-          }
-
-          /*##### Collisions on the Y axis ##### */
-          var underY = ballArray[i].getY() <= 0
-          var overY = ballArray[i].getY() + ballArray[i].getClippedHeight() >= canvas_Height
-          if (underY || overY) { // check for y collisions.
-              ballArray[i].velocity.setY(-ballArray[i].velocity.getY()); // if collided with a wall on x Axis, reflect Velocity.X.
-              ballArray[i].position = ballArray[i].lastGoodPosition;
-          }
-        }
-    }
-    function checkBallCollision(ball1, ball2) {
-
-      var x1 = ball1.getX(),
-        x2 = ball2.getX(),
-        w1 = ball1.getClippedWidth(),
-        w2 = ball2.getClippedWidth(),
-        y1 = ball1.getY(),
-        y2 = ball2.getY(),
-        h1 = ball1.getClippedHeight(),
-        h2 = ball2.getClippedHeight();
-      var isInWidth = (x1 <= x2+w2) && (x1+w1 >= x2),
-        isInHeight = (y1 <= y2+h2) && (y1+h1 >= y2);
-
-      return  (isInWidth && isInHeight);
-
-    }
-    function ballCollisionResponce(ball1, ball2) {
-        var xDistance = (ball2.getX() - ball1.getX());
-        var yDistance = (ball2.getY() - ball1.getY());
-
-        var normalVector = new vector(xDistance, yDistance); // normalise this vector store the return value in normal vector.
-        normalVector = normalVector.normalise();
-
-        var tangentVector = new vector((normalVector.getY() * -1), normalVector.getX());
-
-        // create ball scalar normal direction.
-        var ball1scalarNormal =  normalVector.dot(ball1.velocity);
-        var ball2scalarNormal = normalVector.dot(ball2.velocity);
-
-        // create scalar velocity in the tagential direction.
-        var ball1scalarTangential = tangentVector.dot(ball1.velocity);
-        var ball2scalarTangential = tangentVector.dot(ball2.velocity);
-
-        var ball1ScalarNormalAfter = (ball1scalarNormal * (ball1.getMass() - ball2.getMass()) + 2 * ball2.getMass() * ball2scalarNormal) / (ball1.getMass() + ball2.getMass());
-        var ball2ScalarNormalAfter = (ball2scalarNormal * (ball2.getMass() - ball1.getMass()) + 2 * ball1.getMass() * ball1scalarNormal) / (ball1.getMass() + ball2.getMass());
-
-        var ball1scalarNormalAfter_vector = normalVector.multiply(ball1ScalarNormalAfter); // ball1Scalar normal doesnt have multiply not a vector.
-        var ball2scalarNormalAfter_vector = normalVector.multiply(ball2ScalarNormalAfter);
-
-        var ball1ScalarNormalVector = (tangentVector.multiply(ball1scalarTangential));
-        var ball2ScalarNormalVector = (tangentVector.multiply(ball2scalarTangential));;
-
-        ball1.velocity = ball1ScalarNormalVector.add(ball1scalarNormalAfter_vector);
-        ball2.velocity = ball2ScalarNormalVector.add(ball2scalarNormalAfter_vector);
-
-        ball1.position = ball1.lastGoodPosition;
-        ball2.position = ball2.lastGoodPosition;
-    }
-
-    return Simulation;
-})();
+});
+});

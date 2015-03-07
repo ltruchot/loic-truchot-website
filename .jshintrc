@@ -1,0 +1,23 @@
+{
+    //CODE RULES :
+    "forin": true, //true: always use for in with an "hasOwnProperty" test, to avoid seeing prototype during enumeration
+    "curly": true, //true: always put brace around a block (like if (test) { test = 0; } )
+    "eqeqeq": true, //true: only use "===", "!==" and not "==", "!=",
+    "es3": true, //true: must be Ecma Script 3 valide (example: no coma at the end of an object like {"a": 0, "b": 1,}
+    "maxcomplexity": 10, //no more than 10 different block imbrication ways in a same function (like if (test1) { if (test2} { if (tests3 {} else if (test 4) {}}}, etc.
+    "debug" : false, //true: debugger don't generate warnings
+
+    //VARIABLES & GLOBALES RULES :
+    "camelcase" : true, //true: variables names must be like "aOtherDay" or "AN_OTHER_DAY
+    "undef": true, //true: undeclared variables generate warnings
+    "unused": true, //true: defined but unused variables generate warnings
+    "devel": true, //authorize debug globals like "console", "alert"...
+    "browser": true, //authorize browser globals like "window", "document", "navigator"...
+    "dojo": true, //authorize dojo toolkit globals like "dojo", "require"...
+    "node": true, //authorize node globals like "module"
+    "globals": {
+        //false = readable only global
+        //true = readable and writeable global
+        "wptv": true //Webtv JS Client global
+    }
+}

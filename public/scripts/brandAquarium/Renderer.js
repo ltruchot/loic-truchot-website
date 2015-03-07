@@ -1,42 +1,50 @@
-Renderer = (function (Context) {
-    var canvasColour;
-    function Renderer(inCanvasColour) {
-        canvasColour = inCanvasColour;
-    };
+define([
+    "dojo/_base/array",
+    "dojo/_base/declare",
+    "dojo/dom"
+],
+function (array, declare, dom) {
+return declare(null, {
 
-    Renderer.prototype.draw = function(context, brandArray) {
+    canvasColour: "#FFFFF",
+    constructor: function (inCanvasColour) {
+        this.canvasColour = inCanvasColour;
+    },
+
+    draw: function (context, brandArray) {
         // draw Canvas Background.
-        drawCanvasBackground(context);
+        this.drawCanvasBackground(context);
         // draw Balls.
-        drawBalls(context, brandArray);
-    }
+        this.drawBrands(context, brandArray);
+    },
 
-    function drawCanvasBackground(context) {
-        canvas = document.getElementById('all-brands');
+    drawCanvasBackground: function (context) {
+        var canvas = dom.byId('all-brands');
         context.beginPath();
-        context.fillStyle = canvasColour;
+        context.fillStyle = this.canvasColour;
         context.fillRect(0, 0, canvas.width, canvas.height);
-    }
-    function drawBalls(context,brandArray) {
-        for (var i = 0; i < brandArray.length; i++) {
+    },
 
-            if (brandArray[i].getColour) {
-              context.beginPath();
-              // draw brand using brand objects data.
-              context.arc(brandArray[i].getX(), brandArray[i].getY(),brandArray[i].getRadius(), 0, Math.PI * 2, false);
-              context.strokeStyle = "000000";
-              context.stroke();
-              context.fillStyle = brandArray[i].getColour();
-              context.fill();
-              context.closePath();
+    drawBrands: function (context, brandArray) {
+
+        array.forEach(brandArray, function (brand) {
+            if (brand.getColour) {
+                context.beginPath();
+                // draw brand using brand objects data.
+                context.arc(brand.getX(), brand.getY(),brand.getRadius(), 0, Math.PI * 2, false);
+                context.strokeStyle = "000000";
+                context.stroke();
+                context.fillStyle = brand.getColour();
+                context.fill();
+                context.closePath();
             }
             else {
-              var img = new Image();
-              img.src = brandArray[i].getImageUrl();
-              context.drawImage(img, brandArray[i].getX(), brandArray[i].getY(), brandArray[i].getClippedWidth(), brandArray[i].getClippedHeight());
+                var img = new Image();
+                img.src = brand.getImageUrl();
+                context.drawImage(img, brand.getX(), brand.getY(), brand.getClippedWidth(), brand.getClippedHeight());
             }
-        }
-    }
+        });
 
-    return Renderer;
-})();
+    }
+});
+});
