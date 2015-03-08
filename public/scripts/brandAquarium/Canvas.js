@@ -117,20 +117,24 @@ return declare(null, {
     createBrands: function () {
         /* Brand takes Mass| vX | vY | imgUrl | imgClippedWidth | imgClippedHeight | href | name */
         this.brandArray.push(
-            new Brand(this.startPositionsOfBrands, 40, 1, 5, '/images/partenaires/coffeescript.png', 117, 20, 'http://coffeescript.org/', "coffeescript"),
+            new Brand(this.startPositionsOfBrands, 40, 1, 5, '/images/partenaires/coffeescript.png', 35, 35, 'http://coffeescript.org/', "coffeescript"),
             // new Brand(this.startPositionsOfBrands, 20, 2, 4, '/images/partenaires/stylus.png', 32, 30, 'http://learnboost.github.io/stylus/', "stylus"),
             new Brand(this.startPositionsOfBrands, 20, 4, 2, '/images/partenaires/brunch-white.png', 30, 30, 'http://brunch.io/', "brunch"),
             new Brand(this.startPositionsOfBrands, 20, 5, 1, '/images/partenaires/backbone-white.png', 17, 20, 'http://backbonejs.org/', "backbone"),
             // new Brand(this.startPositionsOfBrands, 20, 5, 0, '/images/partenaires/jade.png', 36, 20, 'http://jade-lang.com/', "jade"),
-            new Brand(this.startPositionsOfBrands, 40, 0, 4, '/images/partenaires/meteor.png', 56, 20, 'https://www.meteor.com/', "meteor"),
+            new Brand(this.startPositionsOfBrands, 40, 0, 4, '/images/partenaires/canvas-sized/meteor-canvas.png', 59, 14, 'https://www.meteor.com/', "meteor"),
             new Brand(this.startPositionsOfBrands, 40, 4, 2, '/images/partenaires/nodejs-white.png', 74, 20, 'http://nodejs.org/', "nodejs"),
             new Brand(this.startPositionsOfBrands, 20, 2, 3, '/images/partenaires/canvas-sized/js-canvas.png', 21, 24, 'http://javascript.crockford.com/', "js"),
             new Brand(this.startPositionsOfBrands, 40, 5, 5, '/images/partenaires/npm.png', 51, 20, 'https://www.npmjs.org/', "npm"),
-            new Brand(this.startPositionsOfBrands, 40, 2, 1, '/images/partenaires/canvas-sized/jquery-canvas.png', 39, 32, 'http://jquery.com/', "jquery"),
+            new Brand(this.startPositionsOfBrands, 40, 2, 1, '/images/partenaires/canvas-sized/jquery-canvas.png', 36, 30, 'http://jquery.com/', "jquery"),
             new Brand(this.startPositionsOfBrands, 20, 2, 5, '/images/partenaires/bootstrap.png', 20, 20, 'http://getbootstrap.com/', "bootstrap"),
             new Brand(this.startPositionsOfBrands, 20, 2, 5, '/images/partenaires/canvas-sized/sass-canvas.png', 40, 30, 'http://sass-lang.com/', "sass"),
             new Brand(this.startPositionsOfBrands, 30, 1, 1, '/images/partenaires/canvas-sized/html5-canvas.png', 31, 30, 'http://dev.w3.org/html5/html-author/', "html5"),
-            new Brand(this.startPositionsOfBrands, 50, 2, 3, '/images/partenaires/canvas-sized/dojo-canvas.png', 45, 20, 'http://dojotoolkit.org/', "dojo")
+            new Brand(this.startPositionsOfBrands, 40, 2, 3, '/images/partenaires/canvas-sized/dojo-canvas.png', 45, 20, 'http://dojotoolkit.org/', "dojo"),
+            new Brand(this.startPositionsOfBrands, 30, 5, 2, '/images/partenaires/intern.png', 30, 30, 'https://theintern.github.io/', "intern"),
+            new Brand(this.startPositionsOfBrands, 20, 3, 3, '/images/partenaires/angular.png', 35, 35, 'https://angularjs.org/', "angular"),
+            new Brand(this.startPositionsOfBrands, 20, 4, 2, '/images/partenaires/loopback.png', 25, 25, 'http://loopback.io/', "loopback"),
+            new Brand(this.startPositionsOfBrands, 20, 4, 4, '/images/partenaires/gulp.png', 23, 51, 'http://gulpjs.com/', "gulp")
         );
 
     },

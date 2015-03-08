@@ -19,6 +19,7 @@
         //false = readable only global
         //true = readable and writeable global
         "Router": false,
-        "Template": false
+        "Template": false,
+        "accountsUIBootstrap3": false
     }
 }

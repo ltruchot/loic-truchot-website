@@ -34,7 +34,11 @@ Template.Footer.rendered = function () {
         "scripts/helpers/responsive.js"
     ],
     function (on, query, BrandAquariumCanvas, helperResponsive) {
+        
+
         thatTemplate.currentBrandAquarium = new BrandAquariumCanvas(helperResponsive.getCurrentWindowSize());
+        
+
         on(window, "resize", function () {
             thatTemplate.currentBrandAquarium.destroy();
             thatTemplate.currentBrandAquarium = new BrandAquariumCanvas(helperResponsive.getCurrentWindowSize());   
