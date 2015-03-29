@@ -18,6 +18,8 @@ body {
   background: url("/images/bg_colline-ld.png") no-repeat;
   background-color: #fcf7e3;
   background-position: top center;
+  margin: 0;
+  padding: 2px;
   font-size: 12px;
   line-height: 20px;
   word-spacing: 0;
@@ -31,16 +33,131 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* line 39, ../app.scss */
-.clear {
-  float: none;
-  clear: both;
-  width: 100%;
-  height: 1px;
-  border: none;
-  color: transparent;
-  background-color: transparent;
-  display: block;
+/* line 41, ../app.scss */
+.simple-insert-with-clipper {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.85);
+  min-height: 150px;
+  position: relative;
+  margin: 0 0 30px 0;
+  padding: 0 0 15px 0;
+}
+/* line 48, ../app.scss */
+.simple-insert-with-clipper.purple-border {
+  border: 1px solid #6459a2;
+}
+/* line 51, ../app.scss */
+.simple-insert-with-clipper.red-border {
+  border: 1px solid #ef7a7e;
+}
+/* line 54, ../app.scss */
+.simple-insert-with-clipper.green-border {
+  border: 1px solid #7ec4a1;
+}
+/* line 57, ../app.scss */
+.simple-insert-with-clipper.black-border {
+  border: 1px solid #000;
+}
+/* line 60, ../app.scss */
+.simple-insert-with-clipper.purple-text {
+  color: #6459a2;
+}
+/* line 63, ../app.scss */
+.simple-insert-with-clipper.red-text {
+  color: #ef7a7e;
+}
+/* line 66, ../app.scss */
+.simple-insert-with-clipper.green-text {
+  color: #7ec4a1;
+}
+/* line 69, ../app.scss */
+.simple-insert-with-clipper.black-text {
+  color: #000;
+}
+
+/* line 74, ../app.scss */
+.clipper {
+  position: absolute;
+  top: 15px;
+  left: -30px;
+  width: 30px;
+  height: 67px;
+}
+
+/* line 81, ../app.scss */
+.purple-clipper {
+  background: url("/images/purple-clipper.png") no-repeat;
+}
+
+/* line 84, ../app.scss */
+.red-clipper {
+  background: url("/images/red-clipper.png") no-repeat;
+}
+
+/* line 87, ../app.scss */
+.green-clipper {
+  background: url("/images/green-clipper.png") no-repeat;
+}
+
+/* line 90, ../app.scss */
+.clipper-content {
+  font-family: "Noesis", sans-serif;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  min-width: 100px;
+  height: 53px;
+  color: #FFF;
+  padding: 20px;
+  text-transform: Uppercase;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+/* line 103, ../app.scss */
+.purple-clipper-content {
+  background-color: #6459a2;
+}
+
+/* line 106, ../app.scss */
+.red-clipper-content {
+  background-color: #ef7a7e;
+}
+
+/* line 109, ../app.scss */
+.green-clipper-content {
+  background-color: #7ec4a1;
+}
+
+/* line 113, ../app.scss */
+.simple-insert-content {
+  padding: 75px 10px 10px 10px;
+  font-size: 1.2em;
+  font-family: "Times", serif;
+}
+
+/* line 118, ../app.scss */
+.simple-insert-title-big {
+  font-family: "Noesis", sans-serif;
+  text-align: center;
+  font-size: 3.5em;
+  color: #3b4759;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+/* line 126, ../app.scss */
+.simple-insert-title-medium {
+  font-family: "Noesis", sans-serif;
+  color: #3b4759;
+  font-size: 2em;
+}
+
+/* line 131, ../app.scss */
+.simple-insert-title-small {
+  font-size: 1.5em;
+  color: #6459a2;
+  font-style: italic;
 }
 
 /*****************************************************************************/
@@ -365,25 +482,25 @@ body {
   outline: none;
   margin: 0 0 0 20px;
 }
-/* line 61, ../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+/* line 61, ../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
 .header-content .entete .recherche:-moz-placeholder {
   color: #000;
   font-style: italic;
   opacity: 1;
 }
-/* line 64, ../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+/* line 64, ../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
 .header-content .entete .recherche::-moz-placeholder {
   color: #000;
   font-style: italic;
   opacity: 1;
 }
-/* line 67, ../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+/* line 67, ../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
 .header-content .entete .recherche:-ms-input-placeholder {
   color: #000;
   font-style: italic;
   opacity: 1;
 }
-/* line 56, ../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+/* line 56, ../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
 .header-content .entete .recherche::-webkit-input-placeholder {
   color: #000;
   font-style: italic;
@@ -522,10 +639,6 @@ header .menu ul.nav li {
 }
 
 /* line 218, ../views/header/header.scss */
-header .menu ul.nav li .menu-md-adjusted-margin {
-  margin-left: -6%;
-}
-/* line 222, ../views/header/header.scss */
 header .menu ul.nav li.divider, header .menu ul.nav li a, header .menu ul.nav li a:visited, header .menu ul.nav li a:hover {
   padding: 18px 0 5px 0;
   margin: 0;
@@ -537,15 +650,15 @@ header .menu ul.nav li.divider, header .menu ul.nav li a, header .menu ul.nav li
   position: relative !important;
   line-height: 20px;
 }
-/* line 234, ../views/header/header.scss */
+/* line 230, ../views/header/header.scss */
 header .menu ul.nav li a:hover, header .menu ul.nav li a:visited {
   color: #3b4759 !important;
 }
-/* line 239, ../views/header/header.scss */
+/* line 235, ../views/header/header.scss */
 header .menu ul.nav li.clicked-menu-item a, header .menu ul.nav li.clicked-menu-item a:hover, header .menu ul.nav li.clicked-menu-item a:visited {
   color: #3b4759 !important;
 }
-/* line 243, ../views/header/header.scss */
+/* line 239, ../views/header/header.scss */
 header .menu ul.nav li .menu-item-info {
   display: none;
   font-size: 0.4em;
@@ -561,19 +674,19 @@ header .menu ul.nav li .menu-item-info {
   background-color: transparent !important;
 }
 
-/* line 259, ../views/header/header.scss */
+/* line 255, ../views/header/header.scss */
 .social-network-link img {
   width: 25px;
 }
 
-/* line 263, ../views/header/header.scss */
+/* line 259, ../views/header/header.scss */
 .sober-inline-list {
   list-style-type: none;
   list-style-image: none;
   list-style-position: inside;
 }
 
-/* line 268, ../views/header/header.scss */
+/* line 264, ../views/header/header.scss */
 .sober-inline-list li {
   display: block;
   float: left;
@@ -692,6 +805,65 @@ footer hr.vaguelettes {
   right: 15px;
 }
 
+/* line 1, ../views/parcours/parcours.scss */
+#photo-cv-container img {
+  float: right;
+  margin: 0 15px;
+  border: 1px dashed #6459a2;
+}
+
+/* line 6, ../views/parcours/parcours.scss */
+.skill-table > tbody > tr:first-child > th, .skill-table > tbody > tr:first-child > td {
+  border-top: none !important;
+}
+
+/* line 10, ../views/parcours/parcours.scss */
+.skill-table > tbody > tr > td:first-child {
+  font-style: italic;
+  width: 160px !important;
+}
+
+/* line 14, ../views/parcours/parcours.scss */
+.exp-item {
+  padding-bottom: 15px;
+}
+/* line 16, ../views/parcours/parcours.scss */
+.exp-item p {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 21, ../views/parcours/parcours.scss */
+.exp-date {
+  display: block;
+  color: #ef7a7e;
+  font-style: italic;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+/* line 28, ../views/parcours/parcours.scss */
+.exp-company {
+  display: block;
+  color: #000;
+  font-weight: bold;
+}
+
+/* line 33, ../views/parcours/parcours.scss */
+#geolocation-work-map, #geolocation-studies-map {
+  width: 100%;
+  height: 400px;
+  border: 1px dashed #ef7a7e;
+}
+
+/* line 38, ../views/parcours/parcours.scss */
+.grey-skills {
+  color: #999;
+}
+
+/*****************************************************************************/
+/* Realisations: Style */
+/*****************************************************************************/
 @media (max-width: 480px) {
   /* Landscape phones and down */
   /* line 3, ../responsive.scss */

@@ -126,7 +126,7 @@ header .entete .carte-visite {
     padding: 0;
     margin: 0;
     background: url('/images/bg_carte_visite-haute.png') no-repeat;
-    color: #7ec4a1;
+    color: $noesisGreen;
     text-align: center;
     float:right;
 }
@@ -144,7 +144,7 @@ header .entete .carte-visite h2 {
     text-align: center;
     padding:15px 0 0 0;
     margin:0;
-    color: #7ec4a1;
+    color: $noesisGreen;
     font-size: 30px;
     width:279px;
     height:57px;
@@ -182,7 +182,7 @@ header .entete .construction {
     top: 135px;
     margin:auto;
     font-size:20px;
-    color: #ef7a7e;
+    color: $noesisRed;
     font-weight:bold;
     position:absolute;
 }
@@ -228,12 +228,12 @@ header .menu ul.nav li {
     }
 
     a:hover, a:visited {
-            color:#3b4759 !important;
+            color:$noesisDarkblue !important;
         }
 
     &.clicked-menu-item {
         a, a:hover, a:visited {
-            color:#3b4759 !important;
+            color:$noesisDarkblue !important;
         }
     }
     .menu-item-info {
@@ -244,7 +244,7 @@ header .menu ul.nav li {
         text-align: left;
         padding:5px 20px 0 25px;
         line-height:13px;
-        color:#3b4759;
+        color:$noesisDarkblue;
         position:absolute;
         top:35px;
         left:0;

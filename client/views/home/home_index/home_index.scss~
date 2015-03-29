@@ -30,7 +30,7 @@
     display:block;
     margin:15px auto 0 auto;
     padding: 5px;
-    border:dashed 1px #6459a2;
+    border:dashed 1px $noesisPurple;
 }
 
 .stand  h3 {
@@ -51,7 +51,7 @@
 }
 .stand .voir {
   font-family: "Noesis", sans-serif;
-  color: #ef7a7e;
+  color: $noesisRed;
   position: absolute;
   font-size:16px;
   bottom: 15px;

@@ -1,0 +1,15 @@
+<template name="Articles">
+    <div class="row">
+        <div class="col-sm-10 col-xs-12 simple-insert-with-clipper purple-border">
+            <div class="purple-clipper clipper"></div>
+            <div class="purple-clipper-content clipper-content">Articles</div>
+            <div class="simple-insert-content">
+                <ul>
+                    {{#each articles}}
+                        {{> ArticleListItem}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>  
+    </div>
+</template>

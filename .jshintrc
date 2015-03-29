@@ -18,8 +18,14 @@
     "globals": {
         //false = readable only global
         //true = readable and writeable global
+        "Meteor": false,
         "Router": false,
         "Template": false,
-        "accountsUIBootstrap3": false
+        "accountsUIBootstrap3": false,
+        "_": false,
+        "App": false,
+        "Handlebars": false,
+        "L": false
+
     }
 }

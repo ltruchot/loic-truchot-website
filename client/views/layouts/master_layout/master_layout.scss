@@ -31,7 +31,7 @@
 }
 .online-quote {
     width:100%;
-    background-color: #241313;
+    background-color: $noesisBraun;
     z-index:10;
     position:relative;
     margin:0;
@@ -80,7 +80,7 @@
     padding-bottom:0;
 }
 .online-quote input[type=text]:focus:invalid:focus, .online-quote input[type=email]:focus:invalid:focus {
-    border-color:#ef7a7e;
+    border-color:$noesisRed;
 }
 .online-quote .control-group {
     margin-bottom:30px;
@@ -90,7 +90,7 @@
     display:block;
     font-family: "Times", serif;
     font-size:16px;
-    background-color: #7ec4a1;
+    background-color: $noesisGreen;
     width:100%;
     margin:0 0 15px 0;
 }
@@ -138,13 +138,13 @@
     padding:0;
 }
 .online-quote .control-group.success .control-label, .online-quote .control-group.success .help-block {
-    color: #7ec4a1;
+    color: $noesisGreen;
 }
 .online-quote .control-group.error .control-label, .online-quote .control-group.error .help-block {
-    color: #ef7a7e;
+    color: $noesisRed;
 }
 .online-quote .control-group.warning .control-label,  .online-quote .control-group.warning .help-block {
-    color: #ef7a7e;
+    color: $noesisRed;
 }
 .online-quote .loader-container {
     margin:8px 0 0 10px;
@@ -163,7 +163,7 @@
 }
 
 .online-quote .error-on-submit, .online-quote .success-on-submit {
-    color: #ef7a7e;
+    color: $noesisRed;
     display:block;
     font-weight:bold;
     font-size: 15px;
@@ -172,7 +172,7 @@
     right:33px;
 }
 .online-quote .success-on-submit {
-    color: #7ec4a1;
+    color: $noesisGreen;
 }
 
 .online-quote .submit-container {

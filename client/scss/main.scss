@@ -1,11 +1,13 @@
-@import "settings",
+@import "base";
 
-        "../app",
+@import "../app";
 
-        "../views/layouts/master_layout/master_layout",
+@import "../views/layouts/master_layout/master_layout";
 
-        "../views/header/header",
-        "../views/footer/footer",
-        "../views/home/home_index/home_index",
+@import "../views/header/header";
+@import "../views/footer/footer";
+@import "../views/home/home_index/home_index";
+@import "../views/parcours/parcours";
+@import "../views/realisations/realisations";
 
-        "../responsive";
+@import "../responsive";

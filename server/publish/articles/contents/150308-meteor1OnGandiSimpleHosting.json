@@ -1,0 +1,74 @@
+{
+	"date": "2015-03-08",
+	"camelCase": "meteor1OnGandiSimpleHosting",
+	"titre": "Une application meteor sur Gandi \"Simple Hosting\"",
+	"sections": [
+		{
+			"title": "Configurer Simple Hosting",
+			"content": 
+				"<ul>
+					<li>Choisir une stack Node.js / mongoDB</li>
+				</ul>"
+		},
+		{
+			"title": "Generer un bundle",
+			"content": 
+				"<ul>
+					<li>Dans le dossier racine, exécuter <pre>meteor build version1</pre></li>
+					<li>Le dossier \"version1\" apparaît dans votre dossier racine: l'explorer et dezipper \"bundle\".</li>
+					<li>Ce \"bundle\" est votre application, prête à être déployée: vous pouvez la tester: <pre>node main.js</pre></li>
+					<li>Cependant, Gandi Simple Hosting s'attend à lancer un \"server.js\" et non un \"main.js\"; il faut donc changer le nom du fichier</li>
+					<li>Par ailleurs, Gandi Simple Hosting aura besoin d'une série de variable d'environnement pour le server node qu'il va faire tourner : placez vous dans programs/server/boot.js</li>
+					<li>Après la ligne 40, juste après:
+						<pre>
+							if (!process.env.NODE_ENV)
+  								process.env.NODE_ENV = 'production';
+  						</pre>
+  						Ajouter les lignes suivantes :
+						<pre>
+							if (!process.env.MONGO_URL)
+							 	process.env.MONGO_URL = 'mongodb://127.0.0.1:27017/meteor';
+							if (!process.env.ROOT_URL)
+							 	process.env.ROOT_URL = 'http://<www.domaine.com>';
+							if (!process.env.MAIL_URL)
+							 	process.env.MAIL_URL = 'smtp://<email@domaine.ext>:<password>@mail.gandi.net:465';
+							process.env.PORT = 8080
+						</pre>
+					</li>
+					<li>Enfin, Meteor 1.0.3 ne pourra pas fonctionner avec un node trop récent ou trop ancien: heureusement Gandi Simple Hosting offre plusieurs alternatives.</li>
+					<li>Pour forcer la version de node sur une instance, il faut creer un package.json à la racine du bundle, ou la version de node 0.10.36 sera exlicetement donnée.
+						<pre>
+							{
+							    'name': '<nom du site>',
+							    'version': '0.0.1',
+							    'engines': {
+							        'node': '0.10.36'
+							    }
+							}
+						</pre>
+					 </li>
+				</ul>"
+		},
+		{
+			"title": "Commit & Deploy",
+			"content": 
+				"<ul>
+					<li>Dans un terminal, se placer à la racine du bundle.</li>
+					<li>Tapez les commande suivante pour initialiser le dossier git
+						<pre>
+							git init 
+							git remote add origin ssh+git://<login en chiffre>@git.dc0.gpaas.net/default.git
+							git add --all
+							git commit -am 'first commit'
+							git push origin master
+						</pre>
+					</li>
+					<li>Enfin, deployez : 
+						<pre>
+							ssh <login en chiffre>@git.dc0.gpaas.net 'deploy default.git'
+						</pre>
+					</li>
+				</ul>"
+		}
+	]
+}

@@ -23,6 +23,8 @@ body {
   background: url('/images/bg_colline-ld.png') no-repeat;
   background-color: $noesisNude;
   background-position: top center;
+  margin:0;
+  padding:2px;
   font-size: 12px;
   line-height: 20px;
   word-spacing:0;
@@ -36,13 +38,98 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-.clear {
-    float: none;
-    clear: both;
-    width: 100%;
-    height: 1px;
-    border: none;
-    color: transparent;
-    background-color: transparent;
-    display: block;
+.simple-insert-with-clipper {
+    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.85);
+    min-height:150px;
+    position:relative;
+    margin:0 0 30px 0;
+    padding:0 0 15px 0;
+    &.purple-border {
+        border:1px solid $noesisPurple;
+    }
+    &.red-border {
+        border:1px solid $noesisRed;
+    }
+    &.green-border {
+        border:1px solid $noesisGreen;
+    }
+    &.black-border {
+        border:1px solid #000;
+    }
+    &.purple-text {
+        color:$noesisPurple;
+    }
+    &.red-text {
+        color:$noesisRed;
+    }
+    &.green-text {
+        color:$noesisGreen;
+    }
+    &.black-text {
+        color:#000;
+    }
+}
+
+.clipper {
+    position: absolute;
+    top:15px;
+    left:-30px;
+    width:30px;
+    height:67px;
+}
+.purple-clipper {
+    background: url('/images/purple-clipper.png') no-repeat;
+}
+.red-clipper {
+    background: url('/images/red-clipper.png') no-repeat;
+}
+.green-clipper {
+    background: url('/images/green-clipper.png') no-repeat;
+}
+.clipper-content {
+    font-family: "Noesis", sans-serif;
+    position: absolute;
+    top:15px;
+    left:0;
+    min-width:100px;
+    height:53px;
+    color: #FFF;
+    padding:20px;
+    text-transform:Uppercase;
+    font-size:1.3em;
+    font-weight:bold;
+}
+.purple-clipper-content {
+    background-color: $noesisPurple;
+}
+.red-clipper-content {
+    background-color: $noesisRed;
+}
+.green-clipper-content {
+    background-color: $noesisGreen;
+}
+
+.simple-insert-content {
+    padding: 75px 10px 10px 10px;
+    font-size: 1.2em;
+    font-family: "Times", serif;
+}
+.simple-insert-title-big {
+    font-family: "Noesis", sans-serif;
+    text-align: center;
+    font-size:3.5em;
+    color: $noesisDarkblue;
+    margin:10px 0;
+    padding:10px 0;
+}
+.simple-insert-title-medium {
+    font-family: "Noesis", sans-serif;
+    color: $noesisDarkblue;
+    font-size:2em;
+}
+.simple-insert-title-small {
+    font-size:1.5em;
+    color: $noesisPurple;
+    font-style: italic;
 }
